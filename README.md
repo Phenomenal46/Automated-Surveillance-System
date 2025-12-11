@@ -52,7 +52,7 @@ The system follows a **Master-Slave architecture**:
     * *Solution:* Designed a voltage divider circuit (using 1.66kΩ and 3.3kΩ resistors) to step down the Nano's TX signal to a safe 3.3V, ensuring reliable communication without frying the ESP32's RX pin.
 
 * **Hardware Power Stability (Brownouts):**
-    * *Challenge:* During the firmware flashing phase, the ESP32 would consistently fail and reset at 8% progress.
+    * *Challenge:* During the firmware flashing phase, the ESP32 CAM would consistently fail and reset at 8% progress.
     * *Solution:* Diagnosed a **power brownout issue** caused by the insufficient current drive of a generic FTDI-style adapter. Resolved by switching to a robust **CP2102-based USB-to-TTL converter**, capable of sustaining the high-current spikes required during flash memory write cycles.
       
 * **Motion Blur Prevention:**
